@@ -1,6 +1,6 @@
 import React ,{useState}from 'react';
 import Exhibit from '../components/LineHeight/Exhibit'
-import Cascader from '../components/LineHeight/Cascader'
+import Cascader from '../lib/design/Cascader'
 import './LineHeight.less'
 
 const LineHeight = () => {
