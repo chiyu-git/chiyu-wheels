@@ -1,0 +1,73 @@
+.exhibit_area{
+  height:400px;
+  border: 1px black solid;
+  overflow: hidden;
+  font-size:16px;
+  .exhibit_container{
+    position: relative;
+    line-height: 100px;
+    font-size:36px;
+    font-family: 'simsun';
+    background-color: rgb(200, 200, 200);
+    transform: scale(3);
+    transform-origin: top left;
+    .exhibit_strut{
+      position: relative;
+      background-color: pink;
+      border:1px greenyellow solid;
+    }
+    .exhibit_text{
+      line-height: normal;
+      font-size:36px;
+      position: relative;
+      background-color: pink;
+      vertical-align: baseline;
+    }
+    img{
+      position: relative;
+      height: 50px;
+      vertical-align: baseline;
+    }
+    .exhibit_empty{
+      line-height: normal;
+      font-size:36px;
+      position: relative;
+      background-color: pink;
+      vertical-align: baseline;
+    }
+    .exhibit_square{
+      line-height: normal;
+      font-size:36px;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background-color: white;
+      vertical-align: baseline;
+    }
+    &::before{
+      position: absolute;
+      content:" ";
+      top:50%;
+      width: 100%;
+      border-top: 1px red solid;
+    }
+    .exhibit_square::before,
+    .exhibit_text::before,
+    .exhibit_strut::before{
+      position: absolute;
+      content:" ";
+      top:50%;
+      width: 100%;
+      border-top: 1px green solid;
+    }
+    /*   #container:after{
+    content: "";
+    display: inline-block;
+    height: 150px;
+    width: 0;
+    background: pink;
+    vertical-align: middle;
+  }    */
+  }
+}
