@@ -23,6 +23,7 @@ class Transition extends Component {
   }
 
   componentDidMount(){
+    
   }
 
   componentDidUpdate(prevProps) {

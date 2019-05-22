@@ -1,10 +1,12 @@
 import React ,{useState}from 'react';
 import Exhibit from '../components/LineHeight/Exhibit'
-import Cascader from '../lib/design/Cascader'
+import {Cascader,Slider} from '../lib/design'
+import {widthOptions,fontSizeOptions} from './CascaderList'
 import './LineHeight.less'
 
 const LineHeight = () => {
   const [width,setWidth] = useState()
+  const [fontSize,setFontSize] = useState()
 
   const options = [
     {
@@ -34,17 +36,24 @@ const LineHeight = () => {
       ],
     },
   ];
+  
   return (
     <section className='line-height_liquid'>
       <div className="line-height_solid">
         <Exhibit width={width}/>
-        <label>width
-          <Cascader
-            defaultValue={123}
-            onChange={setWidth}
-            options={options}
-          />
-        </label>
+        
+         <Cascader
+          changeParent={setWidth}
+          {...widthOptions}
+        />
+        
+        <Cascader
+          changeParent={setFontSize}
+          {...fontSizeOptions}
+        />
+        <div style={{height:'100px'}}>
+          <Slider/>
+        </div>
       </div>
     </section>
   );

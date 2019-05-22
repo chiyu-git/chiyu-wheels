@@ -1,7 +1,7 @@
 input{
   box-sizing: border-box;
   width: 200px;
-  height:25px;
+  height:30px;
   padding:5px 10px;
   border:1px solid rgba(200,200,200);
   border-radius:5px;
@@ -15,6 +15,7 @@ input:focus,input:hover{
 
 .design_cascader_picker{
   position: relative;
+  font-size:14px;
   .design_cascader_picker_arrow{
     position: absolute;
     top:5px;
@@ -27,24 +28,40 @@ input:focus,input:hover{
 }
 .design_cascader_menu_container{
   position: absolute;
+  top: 27px;left: 0;
   border:1px solid rgba(200,200,200);
   border-radius:5px;
   white-space: nowrap;
   min-height:100px;
   box-shadow:0 2px 8px rgba(0,0,0,0.15);
   .design_cascader_menu_list{
-    padding:5px 10px;
     display:inline-block;
-    border-right:1px solid rgba(200,200,200);
     min-height:100px;
+    border-right:1px solid rgba(200,200,200);
     vertical-align: top;
     &:last-child{
       border-right:none;
+      li{
+        border-top-right-radius: 5px;
+      }
+    }
+    &:first-child{
+      li{
+        border-top-left-radius: 5px;
+      }
     }
     &>li{
+      padding:5px 10px;
+      line-height:22px;
       &>span{
         margin-right:20px;
       }
+    }
+    &>.active{
+      background-color:#FAFAFA;
+    }
+    &>li:hover{
+      background-color:#E6F7FF;
     }
   }
 }
@@ -70,4 +87,34 @@ input:focus,input:hover{
 .slide-down-exited{
   opacity:0;
   transform:scaleY(0);
+}
+
+.design_slider_container{
+  position: relative;
+  box-sizing:border-box;
+  width:12px;
+  height:100%;
+  padding:0 4px;
+  .design_slider_rail{
+    width:4px;
+    height:100%;
+    background-color: #f5f5f5;
+  }
+  .design_slider_track{
+    position: absolute;
+    top: 0;
+    width:4px;
+    height:100%;
+    background-color: #91d5ff;
+  }
+  .design_slider_handle{
+    position: absolute;
+    bottom: 0;left: -1px;
+    box-sizing:border-box;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border:solid 2px #91d5ff;
+    border-radius:50%;
+  }
 }

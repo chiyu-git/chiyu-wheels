@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import Frame from './layouts/Frame.jsx'
 import './static/reset.css'
-import './static/design.less'
+import './lib/design/design.less'
 
 
 ReactDOM.render(<Frame/>,document.getElementById('root'));

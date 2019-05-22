@@ -1,21 +1,36 @@
-import React,{useState}from 'react';
+import React,{useState,useContext}from 'react';
+
+import {ChildProps} from './Cascader'
 
 const MenuList = (props) => {
   const {selected,setSelected,listIndex} = props
+  const childProps = useContext(ChildProps);
   // 这一次要渲染的MenuList
   const options = selected[listIndex]
   
   const handleSelect = (ev) => {
-    const index = ev.currentTarget.dataset.index
+    const target = ev.currentTarget
+    const index = target.dataset.index
 
     if(options[index].children===undefined){
-      // 已经是最后一级了，将value渲染到input中
-
+      // 已经是最后一级了，将value 渲染到 input中
+      childProps.setValue(options[index].value)
+      // cascader 收缩
+      childProps.setShowMenu(!childProps.showMenu)
+      // 箭头归位
+      childProps.arrow.current.classList.toggle('design_cascader_picker_arrow_active')
     }else{
       // 展开下一级，options[index].children 就是下一个要渲染的MenuList
       // 确认listIndex，提取出前面的
       setSelected([...selected.slice(0,listIndex+1),options[index].children])
     }
+    // 无论是哪一级，都需要修改当前背景色
+    // 还要清理同级的其他兄弟
+    [...target.parentNode.children].forEach((child,i) => {
+      child.classList.remove('active')
+    })
+    
+    target.classList.toggle('active')
   }
   // 渲染对应index
   return (
