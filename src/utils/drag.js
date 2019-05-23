@@ -91,12 +91,15 @@ export function touchDrag(
  * @param {node} container
  * @param {node} inner
  * @param {object} options
+ * @param {function} function
  * @return {boolean}
  */
+
 export function mouseDrag(
   container,
   inner,
   options,
+  callback=function(){},
 ){
   const defaults = {
     x:true, // 是否允许x轴拖拽
@@ -130,22 +133,24 @@ export function mouseDrag(
       let translateY = elementStart.y + mouseOffset.top
       
       // 超出控制，还需要根据方向再做调整
-      if(translateX<maxOffset.left) translateX = maxOffset.left
+      if(translateX>maxOffset.left) translateX = maxOffset.left
       if(translateY<-maxOffset.top) translateY = -maxOffset.top
-      if(translateX<0) translateX = 0
+      if(translateX<-inner.offsetWidth/2) translateX = -inner.offsetWidth/2
       if(translateY>inner.offsetHeight/2) translateY = inner.offsetHeight/2
 
-      if(!options.x) translateX = 0
-      if(!options.y) translateY = inner.offsetHeight/2
-
+      if(!options.x) translateX = -inner.offsetWidth/2
+      if(!options.y) translateY = 0
+      
       accessTransform(inner,'translateX',translateX)
       accessTransform(inner,'translateY',translateY)
+      
+      if(typeof callback === 'function'){
+        callback(translateX,translateY)
+      }
     }
 
     document.onmouseup = function(){
       // 解除document的绑定，防止误触
-      console.log('move');
-      
       document.onmousemove = document.onmouseup =null;
     }
     // 阻止默认行为，防止移动的时候框选文本

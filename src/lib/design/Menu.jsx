@@ -1,4 +1,5 @@
 import React,{useState,useContext}from 'react';
+import Slider from './Slider'
 
 import {ChildProps} from './Cascader'
 
@@ -7,6 +8,7 @@ const MenuList = (props) => {
   const childProps = useContext(ChildProps);
   // 这一次要渲染的MenuList
   const options = selected[listIndex]
+  console.log(options);
   
   const handleSelect = (ev) => {
     const target = ev.currentTarget
@@ -32,25 +34,34 @@ const MenuList = (props) => {
     
     target.classList.toggle('active')
   }
-  // 渲染对应index
-  return (
-    <ul className='design_cascader_menu_list'>
-      {options.map((option,index) => {
-        let arrowRight = null
-        if(option.children) arrowRight =  <i className='iconfont icon-arrow_right'></i>
-        return (
-          <li 
-            key={option.value} 
-            onClick={handleSelect}
-            data-index={index}
-            >
-            <span>{option.value}</span>
-            {arrowRight}
-          </li>
-        )
-      })}
-    </ul>
-  )
+  if(options.value !== 'slider'){
+    // 渲染对应index
+    return (
+      <ul className='design_cascader_menu_list'>
+        {options.map((option,index) => {
+          let arrowRight = null
+          if(option.children) arrowRight =  <i className='iconfont icon-arrow_right'></i>
+          return (
+            <li 
+              key={option.value} 
+              onClick={handleSelect}
+              data-index={index}
+              >
+              <span>{option.value}</span>
+              {arrowRight}
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }else{
+    // length类型，渲染一个Slider
+    return (
+      <span className='design_cascader_menu_list' style={{width:'150px'}}>
+        <Slider points={options.points}/>
+      </span>
+    )
+  }
 }
 
 const Menu = (props) => {

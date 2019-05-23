@@ -51,9 +51,6 @@ const LineHeight = () => {
           changeParent={setFontSize}
           {...fontSizeOptions}
         />
-        <div style={{height:'100px'}}>
-          <Slider/>
-        </div>
       </div>
     </section>
   );
