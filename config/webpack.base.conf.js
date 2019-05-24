@@ -16,7 +16,7 @@ module.exports = {
   },
   // 解析,自动为引入的模块添加后缀名
   resolve: {
-    extensions: ['.ts', '.tsx', '.js','.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js','.jsx', '.json'],
   },
   // loader
   module: {

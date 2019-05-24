@@ -1,8 +1,7 @@
 import React,{useState,useRef,useEffect}from 'react';
-import {mouseDrag} from '../../utils/drag.js'
-import {accessTransform} from '../../utils/accessTransform'
+import {mouseDrag} from '../../../utils/drag.js'
 
-import './Slider.less'
+import './index.less'
 
 const Slider = (props) => {
   const container = useRef(null)

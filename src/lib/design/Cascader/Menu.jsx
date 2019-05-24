@@ -1,7 +1,7 @@
 import React,{useState,useContext}from 'react';
-import Slider from './Slider'
+import Slider from '../Slider'
 
-import {ChildProps} from './Cascader'
+import {ChildProps} from './index'
 
 const MenuList = (props) => {
   const {selected,setSelected,listIndex} = props

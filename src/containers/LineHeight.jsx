@@ -1,6 +1,6 @@
 import React ,{useState}from 'react';
 import Exhibit from '../components/LineHeight/Exhibit'
-import {Cascader,Slider} from '../lib/design'
+import {Cascader} from '../lib/design'
 import {widthOptions,fontSizeOptions} from './CascaderList'
 import './LineHeight.less'
 

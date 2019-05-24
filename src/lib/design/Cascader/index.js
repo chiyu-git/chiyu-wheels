@@ -1,7 +1,7 @@
 import React,{useState,useRef} from 'react';
 import Menu from './Menu'
-import Transition from './Transition'
-
+import Transition from '../Transition'
+import './index.less'
 export let ChildProps = ChildProps = React.createContext(null)
 
 const defaultClass = 'slide-down'
