@@ -36,3 +36,27 @@ input:focus,input:hover{
   transform:scaleY(0);
 }
 
+.collapse{
+  opacity:0;
+  transform: scale(0);
+  transform-origin: center bottom;
+  transition:.3s opacity ease-in-out,.3s transform  ease-in-out;
+}
+
+.collapse-entering{
+  opacity:1;
+  transform:scaleY(1);
+}
+.collapse-entered{
+  opacity:1;
+  transform:scaleY(1);
+}
+.collapse-exiting{
+  opacity:0;
+  transform:scaleY(0);
+}
+.collapse-exited{
+  opacity:0;
+  transform:scaleY(0);
+}
+

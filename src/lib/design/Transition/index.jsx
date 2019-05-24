@@ -95,7 +95,7 @@ class Transition extends Component {
     delete childProps.onExiting
     delete childProps.onExited
     
-    return children(status,childProps)
+    return children(status,childProps) || null
   }
 }
 
