@@ -17,6 +17,9 @@ module.exports = {
   // 解析,自动为引入的模块添加后缀名
   resolve: {
     extensions: ['.ts', '.tsx', '.js','.jsx', '.json'],
+    alias: {
+      utils: path.resolve(__dirname, 'src/utils/')
+    }
   },
   // loader
   module: {

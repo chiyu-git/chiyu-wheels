@@ -4,7 +4,6 @@ import './Exhibit.less'
 import imgMiddle from './img/img2-middle.jpg'
 const Exhibit = (props) => {
   const {width} = props
-  console.log(width); 
   
   return (
     <div className='exhibit_area'>

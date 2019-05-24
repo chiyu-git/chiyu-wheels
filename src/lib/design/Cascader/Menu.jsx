@@ -8,7 +8,7 @@ const MenuList = (props) => {
   const childProps = useContext(ChildProps);
   // 这一次要渲染的MenuList
   const options = selected[listIndex]
-  console.log(options);
+  // console.log(options);
   
   const handleSelect = (ev) => {
     const target = ev.currentTarget

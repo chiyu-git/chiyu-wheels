@@ -7,7 +7,6 @@ import './LineHeight.less'
 const LineHeight = () => {
   const [width,setWidth] = useState()
   const [fontSize,setFontSize] = useState()
-  const node = useRef(null)
   return (
     <section className='line-height_liquid'>
       <div className="line-height_solid">
@@ -22,8 +21,6 @@ const LineHeight = () => {
           changeParent={setFontSize}
           {...fontSizeOptions}
         />
-        <div ref={node}>123456</div>
-        <Tooltip node={node} text={'tooltip'}/>
       </div>
     </section>
   );
