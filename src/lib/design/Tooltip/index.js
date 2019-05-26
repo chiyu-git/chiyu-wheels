@@ -50,7 +50,7 @@ const Tooltip = (props) => {
   },[])
   return ReactDOM.createPortal(
     (
-      <Transition in={true}>
+      <Transition in={show}>
         {(state) => {
           return (
             <div 

@@ -12,11 +12,6 @@ const LineHeight = () => {
       <div className="line-height_solid">
         <Exhibit width={width}/>
         
-         <Cascader
-          changeParent={setWidth}
-          {...widthOptions}
-        />
-        
         <Cascader
           changeParent={setFontSize}
           {...fontSizeOptions}
