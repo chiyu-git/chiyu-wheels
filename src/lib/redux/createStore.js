@@ -4,7 +4,30 @@
  * @param {Function} [enhancer] 
  * @returns {Store}
  */
-export default function createStore(reducer, preloadedState) {
+export default function createStore(reducer, preloadedState,enhancer) {
+  if (
+    (typeof preloadedState === 'function' && typeof enhancer === 'function') ||
+    (typeof enhancer === 'function' && typeof arguments[3] === 'function')
+  ) {
+    throw new Error(
+      'It looks like you are passing several store enhancers to ' +
+        'createStore(). This is not supported. Instead, compose them ' +
+        'together to a single function.'
+    )
+  }
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState
+    preloadedState = undefined
+  }
+
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
+      throw new Error('Expected the enhancer to be a function.')
+    }
+
+    return enhancer(createStore)(reducer, preloadedState)
+  }
 
   let currentReducer = reducer // 当前store中的reducer，是一个函数，聚合了所有子reducer
   let currentState = preloadedState // 当前store中存储的状态 ???

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Count = (props) => {
-
+  
   return (
     <div>
-      {props.count}
+      {props.state.count}
     </div>
   );
 };
