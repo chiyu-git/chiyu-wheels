@@ -1,7 +1,14 @@
+## UI库
 ### 三级联动
-### react-css-transition
-## 展示区
-### 基本布局
-+ 流体容器+固定容器
-+ 需要放大三倍 980px 足够了
-+ 容器的line-height有100px,展示区整个给400px就够了
+- [src/lib/design/Cascader](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Cascader)
+- [src/lib/design/Slider](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Slider)
+- [src/lib/design/Tooltip](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Tooltip)
+- [src/lib/design/Transition](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Transition)
+## JS库
+- [src/lib/redux](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/redux)
+- [src/lib/pubsub](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/redux)
+- [src/lib/flux](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/redux)
+## 其他
+- 瀑布流
+- 橡皮筋
+- 轮播图
