@@ -9,14 +9,20 @@ import {accessTransform} from './accessTransform'
 export function touchDrag(
   container,
   inner,
-  options,
+  { // 参数默认值配合解构赋值使用
+    x=true, // 是否允许x轴拖拽
+    y=true, // 是否允许y轴拖拽
+    overflow=true,
+  },
   ){
+  /*   
   const defaults = {
     x:true, // 是否允许x轴拖拽
     y:true, // 是否允许y轴拖拽
     overflow:true,
-  }
+  } 
   options = Object.assign(defaults,options)
+  */
   // 如何保证inner只在容器内滑动？首先把事件添加给容器，还要做超出限制
   let elementStart = {x:0,y:0} // inner 当前的位置,距离container的偏移
   let fingerStart = {x:0,y:0}    // 手指当前的位置,初始化为0
@@ -98,15 +104,14 @@ export function touchDrag(
 export function mouseDrag(
   container,
   inner,
-  options,
+  { // 参数默认值配合解构赋值使用
+    x=true, // 是否允许x轴拖拽
+    y=true, // 是否允许y轴拖拽
+    overflow=true,
+  },
   callback=function(){},
 ){
-  const defaults = {
-    x:true, // 是否允许x轴拖拽
-    y:true, // 是否允许y轴拖拽
-    overflow:true,
-  }
-  options = Object.assign(defaults,options)
+  
   let elementStart = {x:0,y:0} // inner 当前的位置,距离container的偏移
   let mouseStart = {x:0,y:0}    // 鼠标当前的位置,初始化为0
   let mouseOffset = {left:0,top:0} // 初始化鼠标偏移量
