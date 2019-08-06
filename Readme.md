@@ -12,6 +12,7 @@
 - [src/lib/pubsub](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/pubsub)
 - [src/lib/flux](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/flux)
 - [src/lib/components](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/components)
+- [src/lib/mvvm](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/mvvm)
 ## 工具库
 - [src/utils/accessTransform](https://github.com/chiyu-git/chiyu-demo/tree/master/src/utils/accessTransfor)
 - [src/utils/drag](https://github.com/chiyu-git/chiyu-demo/tree/master/src/utils/drag)
