@@ -102,7 +102,7 @@ export function mouseDrag(
   { // 参数默认值配合解构赋值使用
     x=true, // 是否允许x轴拖拽
     y=true, // 是否允许y轴拖拽
-    overflow=true,
+    // overflow=true,
   }={},
   callback=function(){},
 ){
@@ -138,8 +138,8 @@ export function mouseDrag(
       if(translateX<-inner.offsetWidth/2) translateX = -inner.offsetWidth/2
       if(translateY>inner.offsetHeight/2) translateY = inner.offsetHeight/2
 
-      if(!options.x) translateX = -inner.offsetWidth/2
-      if(!options.y) translateY = 0
+      if(!x) translateX = -inner.offsetWidth/2
+      if(!y) translateY = 0
       
       accessTransform(inner,'translateX',translateX)
       accessTransform(inner,'translateY',translateY)
