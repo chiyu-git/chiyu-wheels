@@ -14,6 +14,7 @@ export default class Store {
     if(params.hasOwnProperty('mutations')) {
       this.mutations = params.mutations;
     }
+
     this.state = new Proxy((params.state || {}), {
       set: function(state, key, value) {
         state[key] = value;
@@ -48,8 +49,8 @@ export default class Store {
    */
   commit(mutationKey, payload) {
     if(typeof this.mutations[mutationKey] !== 'function') {
-    console.log(`Mutation "${mutationKey}" doesn't exist`);
-    return false;
+      console.log(`Mutation "${mutationKey}" doesn't exist`);
+      return false;
     }
     this.status = 'mutation';
     let newState = this.mutations[mutationKey](this.state, payload);

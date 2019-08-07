@@ -9,7 +9,7 @@ export default class PubSub {
    * @api private
    */
   subscribe(event, handler) {
-    if(!this.eventList.hasOwnProperty(event)) {
+    if(!this.eventList.hasOwnProperty(event) || this.eventList[event].length===0) {
       this.eventList[event] = [];
     }
     return this.eventList[event].push(handler);
@@ -39,5 +39,13 @@ export default class PubSub {
     const handlerIndex = handlers.indexOf(handler)
     handlers.splice(handlerIndex,1)
     console.log('成功解除事件绑定');
+  }
+  once(event,handler){
+    const self = this
+    function func(...rest){
+      handler(rest)
+      self.unsubscribe(event,func)
+    }
+    this.subscribe(event,func)
   }
 }

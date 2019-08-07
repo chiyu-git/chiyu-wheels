@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PubSub</title>
+</head>
+<body>
+  
+</body>
+<script src='./index.js' type='module'></script>
+<script>
+  let pubSub = new PubSub()
+
+  const testHandler = (...rest) => {
+    rest.forEach((val) => {console.log(val)})
+  }
+  pubSub.subscribe('test',testHandler)
+  pubSub.publish('test','hello','world')
+  pubSub.unsubscribe('test',testHandler)
+  pubSub.publish('test2','hello','world')
+  pubSub.once('testOnce',testHandler)
+  pubSub.publish('testOnce','once','once')
+  pubSub.publish('testOnce','two','two')
+</script>
+</html>
