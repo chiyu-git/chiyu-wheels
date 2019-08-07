@@ -1,11 +1,8 @@
 ## UI库
 ### Cascader
 - [src/lib/design/Cascader](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Cascader)
-### Slider
 - [src/lib/design/Slider](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Slider)
-### Tooltip
 - [src/lib/design/Tooltip](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Tooltip)
-### Transition
 - [src/lib/design/Transition](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/design/Transition)
 ## JS库
 - [src/lib/redux](https://github.com/chiyu-git/chiyu-demo/tree/master/src/lib/redux)
